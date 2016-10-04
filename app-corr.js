@@ -12,27 +12,29 @@
 	sinon, change la couleur du fond de la page.
 	*/
 
-	init();
+	console.log('init');
 
-	function init(){
+	var buttons = $("[type='button']");
+	var checkbox = $("[type='checkbox'");
 
-		console.log('init');
-		var buttons = $("[type='button']");
+	// Init bg color
+	for(var i=0; i< buttons.length; i++){
+		var button = $(buttons[i]); // convert to jQuery object
+		var buttonColor = button.data('color');
 
-		// Init bg color
-		for(var i=0; i< buttons.length; i++){
-			var button = $(buttons[i]); // convert to jQuery object
-			var buttonColor = button.data('color');
-
-			button.css('background', buttonColor);
-		}
-
-		// Add listener
-		buttons.click(function(){
-			var color = $(this).data('color');
-			$('body').css('background', color);
-		});
-
-
+		button.css('background', buttonColor);
 	}
+
+	// Add listener
+	buttons.click(function(){
+		var isChecked = checkbox.is(':checked');
+		var color = $(this).data('color');
+
+		if(isChecked){
+			$('.main').css('color', color);
+		}else{
+			$('body').css('background', color);
+		}
+	});
+
 })();
