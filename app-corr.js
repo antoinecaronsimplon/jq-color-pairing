@@ -15,7 +15,7 @@
 	console.log('init');
 
 	var buttons = $("[type='button']");
-	var checkbox = $("[type='checkbox'");
+	var checkbox = $("[type='checkbox']");
 
 	// Init bg color
 	for(var i=0; i< buttons.length; i++){
