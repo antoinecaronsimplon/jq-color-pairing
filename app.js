@@ -28,9 +28,10 @@
 		}
 
 		// Add listener
-		// buttons.click(function(){
-		// 	$(
-		// });
+		buttons.click(function(){
+			var color = $(this).data('color');
+			$('body').css('background', color);
+		});
 
 
 	}
